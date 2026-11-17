@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-brand: var(--brand);
+  --color-brand-light: var(--brand-light);
+  --color-sky: var(--sky);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+/* Afzal Enterprises brand: logo navy + logo red, on a light-blue wash (as on afzalenterprises.com) */
+:root {
+  --radius: 0.75rem;
+  --background: #f6fbff;
+  --foreground: #14192e;
+  --card: #ffffff;
+  --card-foreground: #14192e;
+  --primary: #000080;
+  --primary-foreground: #ffffff;
+  --brand: #cc0000;
+  --brand-light: #ff7373;
+  --sky: #7cc1ee;
+  --muted: #e3f1fc;
+  --muted-foreground: #4a5775;
+  --accent: #e3f1fc;
+  --accent-foreground: #14192e;
+  --border: #cde2f3;
+  --ring: #000080;
+  --chart-1: #1a1a99;
+  --chart-2: #cc0000;
+  --chart-3: #2b8be0;
+  --chart-4: #0b6b6b;
+  --chart-5: #5b3f9e;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground font-sans antialiased; margin: 0; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; color: var(--primary); }
+}
+
+@layer components {
+  /* the original site's rounded light-blue gradient panels */
+  .panel-sky {
+    background: linear-gradient(135deg, #f7fcff 0%, #d6ecfc 100%);
+    border: 1px solid var(--sky);
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 30px -12px rgb(43 139 224 / 0.35);
+  }
+}
